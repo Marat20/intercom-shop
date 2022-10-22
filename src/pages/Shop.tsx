@@ -1,12 +1,13 @@
-import { Content } from '../components/product/Content';
-import { MainLayout } from '../layout/MainLayout';
+import { Menu } from '../components/navigation/Menu';
+import { Routes } from '../components/navigation/Routes';
+import { Products } from '../components/product/Products';
 
 export const Shop = () => {
   return (
-    <MainLayout>
-      <main>
-        <Content/>
-      </main>
-    </MainLayout>
+    <section>
+      <Menu />
+      <Routes />
+      <Products />
+    </section>
   );
 };

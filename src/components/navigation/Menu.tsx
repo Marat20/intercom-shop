@@ -1,6 +1,6 @@
-export const Navigation = () => {
+export const Menu = () => {
     return (
-                <nav>
+                <nav className="menu-nav">
                     <ul>
                         <li>Все</li>
                         <li>Домофон</li>

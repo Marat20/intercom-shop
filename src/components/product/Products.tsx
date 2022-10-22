@@ -1,41 +1,12 @@
 import { useState } from "react";
+import { useAppSelector } from "../../hooks/redux-hook";
+import { IProduct } from "../../interfaces/product";
 import { Product } from "./Product";
 
-const arr = [
-    {
-        name: 'One',
-        image: 'Alt',
-        description: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem',
-        price: 3000,
-        id: 1
-    },
-    {
-        name: 'Two',
-        image: 'Alt',
-        description: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem',
-        price: 3000,
-        id: 2
-    },
-    {
-        name: 'Three',
-        image: 'Alt',
-        description: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem',
-        price: 3000,
-        id: 3
-    },
-    {
-        name: 'Four',
-        image: 'Alt',
-        description: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem',
-        price: 3000,
-        id: 4
-    }
-]
-
 export const Products = () => {
-    const [products, setProducts] = useState(arr);
+    const products = useAppSelector(state => state.products)
     return (
-        <div>
+        <div className="products">
             {
                 products.map(el => (
                     <Product key={el.id} {...el}/>
