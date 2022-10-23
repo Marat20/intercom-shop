@@ -9,6 +9,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '1',
     category: 't-shirt',
+    count: 1
   },
   {
     name: 'Two',
@@ -17,6 +18,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '2',
     category: 'jacket',
+    count: 1
   },
   {
     name: 'Three',
@@ -25,6 +27,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '3',
     category: 'jeans',
+    count: 1
   },
   {
     name: 'Four',
@@ -33,6 +36,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '4',
     category: 'shoes',
+    count: 1
   },
   {
     name: 'Three',
@@ -41,6 +45,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '5',
     category: 'jeans',
+    count: 1
   },
   {
     name: 'Three',
@@ -49,6 +54,7 @@ const initialState: IProduct[] = [
     price: 3000,
     id: '6',
     category: 'jeans',
+    count: 1
   },
 ];
 

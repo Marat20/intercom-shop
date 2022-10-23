@@ -3,8 +3,8 @@ import { IProduct } from "../../../interfaces/product";
 
 const initialState: IProduct[] = [];
 
-const basketSlice = createSlice({
-    name: 'basket',
+const cartSlice = createSlice({
+    name: 'cart',
     initialState,
     reducers: {
         addProduct(state, action): void {
@@ -13,5 +13,5 @@ const basketSlice = createSlice({
     }
 })
 
-const {addProduct} = basketSlice.actions;
-export default basketSlice.reducer;
+export const {addProduct} = cartSlice.actions;
+export default cartSlice.reducer;

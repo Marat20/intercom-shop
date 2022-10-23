@@ -7,7 +7,9 @@ export interface IProduct {
     image: string
     price: number
     category: string
+    count: number
 }
+
 
 export interface Props {
     children?: ReactNode

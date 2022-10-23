@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Circe';
-  src: url('./media/fonts/playfair_display.ttf') format('truetype');
+  src: url('./media/fonts/Forum-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,12 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: Circle !important
+  font-family: Circe;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 ul {
@@ -21,7 +26,7 @@ li {
   list-style-type: none;
 }
 
-@media (min-width: 575.98px){
+@media (min-width: 575.98px) {
   .container {
     max-width: 540px;
     margin: auto;
@@ -29,9 +34,9 @@ li {
   }
 }
 
-@media (min-width: 767.98px){
+@media (min-width: 767.98px) {
   .container {
-    max-width: 720px;	
+    max-width: 720px;
   }
 }
 
@@ -41,7 +46,7 @@ li {
   }
 }
 
-@media (min-width: 1199.98px){
+@media (min-width: 1199.98px) {
   .container {
     max-width: 1300px;
   }
@@ -72,7 +77,6 @@ li {
 }
 
 .header-list li a {
-  text-decoration: none;
   letter-spacing: 0.2em;
   font-size: 15px;
   color: black;
@@ -82,9 +86,18 @@ li {
   margin-right: 30px;
 }
 
+/* BASKET */
+
+.basket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+}
+
 /* MAIN */
 
-  /* NAV */
+/* NAV */
 
 .menu-nav {
   text-align: center;
@@ -96,7 +109,11 @@ li {
   margin: 0 12px;
 }
 
-  /* PRODUCT */
+/* ROUTE */
+
+
+
+/* PRODUCT */
 
 .products {
   display: grid;
@@ -108,4 +125,17 @@ li {
   border-radius: 10px;
   width: 250px;
   height: 300px;
+}
+
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0em;
 }
