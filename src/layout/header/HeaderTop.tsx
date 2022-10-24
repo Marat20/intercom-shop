@@ -1,7 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IconBasket, IconSearch } from '../../media/svg/icons';
+import { CartModal } from '../../components/cart/CartModal';
+import { IconCart, IconSearch } from '../../media/svg/icons';
 
 export const HeaderTop = () => {
+  const [visibleCart, setVisibleCart] = useState(false);
+
+  const toggleVisibleCart = () => {
+    setVisibleCart(!visibleCart);
+  };
+
   return (
     <header className='header'>
       <div className='header-top'>
@@ -15,10 +23,10 @@ export const HeaderTop = () => {
             </li>
           </ul>
           <div className='icon'>
-            <IconSearch/>
+            <IconSearch />
           </div>
-          <div>
-            <IconBasket/>
+          <div className='icon' onClick={toggleVisibleCart}>
+            <IconCart />
           </div>
         </nav>
 
@@ -27,6 +35,7 @@ export const HeaderTop = () => {
           <a href=''>LOGO</a>
         </div>
       </div>
+      <CartModal visibleCart={visibleCart} />
     </header>
   );
 };

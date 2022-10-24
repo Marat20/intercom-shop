@@ -84,15 +84,128 @@ li {
 
 .icon {
   margin-right: 30px;
+  cursor: pointer;
 }
 
-/* BASKET */
+/* CART */
 
-.basket-top {
+.cart-modal {
+  width: 350px;
+  position: fixed;
+  box-shadow: 0 6px 20px 0 rgb(0 0 0 / 14%);
+  inset: 99px auto auto 345.031px;
+  z-index: 100;
+  background-color: #fff;
+  visibility: hidden;
+  transform: translateY(5%);
+  opacity: 0;
+}
+
+.is_visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.is_visible,
+.cart-modal {
+  transition-duration: .2s;
+  transition-property: opacity, transform, visibility;
+}
+
+.cart-modal-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 22px 25px;
+}
+
+.cart-modal-products-body {
+  padding: 0 25px 22px;
+  max-height: 435px;
+  overflow-y: auto;
+  transition: border .4s;
+  border-top: 1px solid transparent;
+}
+
+.cart-modal-products {
+  display: flex;
+  max-height: 1024px;
+}
+
+.cart-modal-products-pane {
+  width: 100%;
+}
+
+.cart-modal-products-image {
+  margin-right: 20px;
+  width: 72px;
+  height: 72px;
+}
+
+.cart-modal-products-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.cart-modal-products-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-modal-products-input {
+  width: 80px;
+  height: 55px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+
+.cart-modal-products-input input {
+  width: 28px;
+  height: 55px;
+  border: 0;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.cart-modal-icon {
+  cursor: pointer;
+}
+
+.cart-modal-products-footer-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-modal-products-footer {
+  border-top: 1px solid #eee;
+  padding: 22px 25px;
+  position: relative;
+  z-index: 0;
+}
+
+.cart-modal-products-footer-button {
+  background-color: black !important;
+  color: #fff !important;
+  display: block !important;
+  width: 100% !important;
+  /* font-size: larger; */
+  text-align: center !important;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 15px;
 }
 
 /* MAIN */

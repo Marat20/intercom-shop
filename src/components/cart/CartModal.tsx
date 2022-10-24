@@ -1,20 +1,35 @@
-import { useAppSelector } from "../../hooks/redux-hook";
-import { CartModalItem } from "./CartModalItem";
+import { useEffect, useState } from 'react';
+import { useAppSelector } from '../../hooks/redux-hook';
+import { IconClose } from '../../media/svg/icons';
+import { CartModalProducts } from './CartModalProducts';
+import { CartModalTotal } from './CartModalTotal';
 
-export const CartModal = () => {
-  const cart = useAppSelector(state => state.cart);
+export const CartModal = (props: { visibleCart: boolean }) => {
+  const cart = useAppSelector((state) => state.cart);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const visibleCart = props.visibleCart;
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      cart.forEach((el) => {
+        const price = el.price * el.count;
+        setTotalPrice((prev) => prev + price);
+      });
+    }
+  }, [cart]);
 
   return (
-    <aside>
-      <div className='cart-top'>
+    <aside className={`cart-modal ${visibleCart ? 'is_visible' : ''}`}>
+      <div className='cart-modal-top'>
         <p>Ваши товары:</p>
-        <button>X</button>
+        <div><IconClose/></div>
       </div>
-      <div className="cart-products">
-        {
-          cart.length > 0 ? cart.map(el => <CartModalItem key={el.id} {...el}/>) : <span>Корзина пуста...</span>
-        }
-      </div>
+      {cart.length > 0 ? (
+        cart.map((el) => <CartModalProducts key={el.id} {...el} />)
+      ) : (
+        <span>Корзина пуста...</span>
+      )}
+      <CartModalTotal price={totalPrice}/>
     </aside>
   );
 };
